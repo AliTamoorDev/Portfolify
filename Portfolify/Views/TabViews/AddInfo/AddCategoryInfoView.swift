@@ -32,9 +32,14 @@ struct AddCategoryInfoView: View {
                                 .foregroundColor(.white)
                                 .fontWeight(.medium)
                                 .cornerRadius(20)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(Color(.white), lineWidth: 1)
+                                )
                         }
                     }
                 })
+                .frame(maxHeight: .infinity)
                 .padding(.horizontal, 15)
                 .task {
                     for item in Categories.allCases {
@@ -45,6 +50,7 @@ struct AddCategoryInfoView: View {
                     accountVM.loadData()
                 }
             }
+            .backgroundGradient()
             .navigationTitle("Add Categories Data")
             .navigationBarTitleDisplayMode(.inline)
 

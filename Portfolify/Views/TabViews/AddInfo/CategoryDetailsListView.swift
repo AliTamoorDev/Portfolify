@@ -15,16 +15,23 @@ struct CategoryDetailsListView: View {
     
     var body: some View {
         ZStack {
-            List() {
-                ForEach($infoItem.data, id: \.self) { $currentItem in
-                    NavigationLink(destination: EditInfoListView(data: $currentItem, mainCategoryArr: infoItem)) {
-                        Text(currentItem.title)
+            VStack {
+                List() {
+                    ForEach($infoItem.data, id: \.self) { $currentItem in
+                        NavigationLink(destination: EditInfoListView(data: $currentItem, mainCategoryArr: infoItem)) {
+                            Text(currentItem.title)
+                        }
+                        .foregroundColor(.primaryBrandBG)
                     }
+                    .onDelete(perform: { indexSet in
+                        infoItem.data.remove(atOffsets: indexSet)
+                        accountVM.saveData()
+                    })
+                    .listRowBackground(Color.test)
                 }
-                .onDelete(perform: { indexSet in
-                    infoItem.data.remove(atOffsets: indexSet)
-                    accountVM.saveData()
-                })
+                .scrollContentBackground(.hidden)
+                .backgroundGradient()
+
             }
             
             if infoItem.data.isEmpty {
@@ -40,6 +47,7 @@ struct CategoryDetailsListView: View {
         .sheet(isPresented: $isPresented){
             AddInfoSheetView(item: infoItem)
             .presentationDetents([.medium])
+            .presentationDragIndicator(.visible)
         }
     }
 }
@@ -54,29 +62,29 @@ struct AddInfoSheetView: View {
     
     var body: some View {
         VStack {
-            VStack {
-                Text(item.categoryTitle)
-                    .padding()
-                    .foregroundColor(Color.primaryBrand)
-                    .font(.title2)
-                    .cornerRadius(12)
-                
-                
-                CustomTextField(fieldTxt: $data.title, imageName: "light.ribbon", text: "Enter Title")
-                
-                CustomTextField(fieldTxt: $data.details, imageName: "info.bubble", text: "Enter \(item.categoryTitle) Details")
-                
-                Button {
-                    item.data.append(data)
-                    presentationMode.wrappedValue.dismiss()
-                    accountVM.saveData()
-                } label: {
-                    Text("Done")
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(Color.primaryBrand)
+            Text(item.categoryTitle)
+                .padding()
+                .foregroundColor(.white)
+                .font(.title)
+                .bold()
+                .cornerRadius(12)
+            
+            
+            CustomTextField(fieldTxt: $data.title, imageName: "light.ribbon", text: "Enter Title")
+            
+            CustomTextField(fieldTxt: $data.details, imageName: "info.bubble", text: "Enter \(item.categoryTitle) Details")
+            
+            Button {
+                item.data.append(data)
+                presentationMode.wrappedValue.dismiss()
+                accountVM.saveData()
+            } label: {
+                Text("Done")
             }
+            .buttonStyle(.borderedProminent)
+            .tint(Color.primaryBrand)
         }
+        .frame(maxHeight: .infinity)
         .backgroundGradient()
     }
 }

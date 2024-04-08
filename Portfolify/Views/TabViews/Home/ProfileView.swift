@@ -25,6 +25,7 @@ struct ProfileView: View {
                 Text("Biogragphy")
                     .font(.title)
                     .bold()
+                    .foregroundStyle(.white)
                     .fontDesign(.monospaced)
                 
                 if vm.images.isEmpty {
@@ -34,7 +35,7 @@ struct ProfileView: View {
                         .overlay {
                             ZStack(alignment: .bottomTrailing) {
                                 Circle()
-                                    .stroke(Color(.label), lineWidth: 1.5)
+                                    .stroke(Color(.white), lineWidth: 1.5)
                                 PhotosPicker(
                                     selection: $vm.selectedPhotos, // holds the selected photos from the picker
                                     maxSelectionCount: maxPhotosToSelect, // sets the max number of photos the user can select
@@ -65,7 +66,7 @@ struct ProfileView: View {
                         .overlay {
                             ZStack(alignment: .bottomTrailing) {
                                 Circle()
-                                    .stroke(Color(.label), lineWidth: 1.5)
+                                    .stroke(Color(.white), lineWidth: 1.5)
                                 PhotosPicker(
                                     selection: $vm.selectedPhotos, // holds the selected photos from the picker
                                     maxSelectionCount: maxPhotosToSelect, // sets the max number of photos the user can select
@@ -100,6 +101,7 @@ struct ProfileView: View {
                                 .fontWeight(.semibold)
                                 .padding(.leading)
                                 .padding(.bottom, -10)
+                                .foregroundStyle(.white)
                             CustomTextField(fieldTxt: $signUpVM.signUpDataObj.name, imageName: "person", text: "Enter Name")
                         }
                     }
@@ -110,6 +112,8 @@ struct ProfileView: View {
                             .fontWeight(.semibold)
                             .padding(.leading)
                             .padding(.bottom, -10)
+                            .foregroundStyle(.white)
+
                         CustomTextField(fieldTxt: $signUpVM.signUpDataObj.highSchool, imageName: "building.columns", text: "Enter High School")
                     }
                     
@@ -120,7 +124,8 @@ struct ProfileView: View {
                                 .fontWeight(.semibold)
                                 .padding(.leading)
                                 .padding(.bottom, -10)
-                            
+                                .foregroundStyle(.white)
+
                             CustomTextField(fieldTxt: $signUpVM.signUpDataObj.cgpa, imageName: "number", text: "Enter CGPA")
                         }
                         
@@ -130,6 +135,8 @@ struct ProfileView: View {
                                 .fontWeight(.semibold)
                                 .padding(.leading)
                                 .padding(.bottom, -10)
+                                .foregroundStyle(.white)
+
                             CustomTextField(fieldTxt: $signUpVM.signUpDataObj.graduationYear, imageName: "graduationcap.fill", text: "Enter Graduation Year")
                         }
                     }
@@ -140,6 +147,8 @@ struct ProfileView: View {
                             .fontWeight(.semibold)
                             .padding(.leading)
                             .padding(.bottom, -10)
+                            .foregroundStyle(.white)
+
                         CustomTextField(fieldTxt: $signUpVM.signUpDataObj.about, imageName: "highlighter", text: "Enter Additional Info.")
                     }
                 }

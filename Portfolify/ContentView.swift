@@ -13,7 +13,11 @@ struct ContentView: View {
     
     @State var navigateToNextScreen = false
     @StateObject var signInVM = SignUpViewModel()
-
+    init() {
+        UITabBar.appearance().unselectedItemTintColor = UIColor.portfolio
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
     var body: some View {
         NavigationStack {
             VStack {

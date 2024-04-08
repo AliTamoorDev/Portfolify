@@ -24,6 +24,7 @@ struct ContactUs: View {
                 HStack {
                     Text("Email: ")
                     Text("zehanli2025@gmail.com")
+                        .foregroundStyle(.white)
                 }
                 
                 HStack {

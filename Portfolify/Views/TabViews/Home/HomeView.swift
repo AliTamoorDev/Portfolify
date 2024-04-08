@@ -15,6 +15,7 @@ struct HomeView: View {
         TabView {
             NavigationView{
                 MainView()
+                    .backgroundGradient()
             }
             .tabItem {
                 VStack {
@@ -43,6 +44,7 @@ struct HomeView: View {
                 }
             }
         }
+        .tint(.primaryBrand)
         .navigationBarBackButtonHidden(true)
     }
 }
@@ -64,6 +66,7 @@ struct MainView: View {
                         icon: {
                             Image(systemName: "rectangle.portrait.and.arrow.right")
                                 .resizable()
+                                .foregroundColor(.black)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 35, height: 40)
                         }
@@ -71,9 +74,12 @@ struct MainView: View {
                     .labelStyle(.iconOnly)
                     .fontWeight(.medium)
                 }
-                .padding()
+                .padding(.horizontal)
             }
-            Spacer()
+            Image("portLogoCLR")
+                .resizable()
+                .frame(width: 300, height: 275)
+                .padding(.bottom)
             
             NavigationLink {
                 Terms_ConditionsView()
@@ -85,7 +91,10 @@ struct MainView: View {
                     }
                     .foregroundColor(.white)
                     .cornerRadius(12)
-            }
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color(.white), lineWidth: 1)
+                    )            }
             
             
             NavigationLink {
@@ -98,7 +107,10 @@ struct MainView: View {
                     }
                     .foregroundColor(.white)
                     .cornerRadius(12)
-            }
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color(.white), lineWidth: 1)
+                    )            }
             
             NavigationLink {
                 ProfileView()
@@ -111,11 +123,16 @@ struct MainView: View {
                     }
                     .foregroundColor(.white)
                     .cornerRadius(12)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color(.white), lineWidth: 1)
+                    )
             }
             
             Spacer()
         }
-        .backgroundGradient()
+        .tint(Color.primaryBrand)
+//        .backgroundGradient()
         .navigationTitle("Home")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
