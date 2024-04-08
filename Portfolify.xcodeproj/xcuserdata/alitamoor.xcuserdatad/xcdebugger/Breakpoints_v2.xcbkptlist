@@ -110,8 +110,8 @@
             filePath = "Portfolify/Views/TabViews/Home/ProfileView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "setImageData(image:)"
             landmarkType = "7">
             <Locations>

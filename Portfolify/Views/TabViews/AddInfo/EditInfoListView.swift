@@ -17,7 +17,6 @@ struct EditInfoListView: View {
     var body: some View {
         VStack {
             VStack {
-                
                 CustomTextField(fieldTxt: $data.title, imageName: "light.ribbon", text: "Enter Title")
                 
                 CustomTextField(fieldTxt: $data.details, imageName: "info.bubble", text: "Enter \(mainCategoryArr.categoryTitle) Details")
@@ -32,6 +31,8 @@ struct EditInfoListView: View {
                 .tint(Color.primaryBrand)
             }
         }
+        .frame(maxHeight: .infinity)
+        .backgroundGradient()
     }
 }
 

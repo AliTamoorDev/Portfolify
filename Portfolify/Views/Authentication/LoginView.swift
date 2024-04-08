@@ -18,6 +18,7 @@ struct LoginView: View {
         VStack {
             Text("Login")
                 .bold()
+                .foregroundStyle(.white)
                 .font(.largeTitle)
                 .fontDesign(.monospaced)
 
@@ -28,7 +29,8 @@ struct LoginView: View {
                 HStack() {
                     Image(systemName: "lock")
                         .padding(.leading)
-                    SecureField("Password", text: $signInVM.signUpDataObj.password)
+                    
+                    SecureField("", text: $signInVM.signUpDataObj.password, prompt: Text("Password").foregroundStyle(Color.white.opacity(0.60)))
                         .lineLimit(5)
                         .padding(.vertical)
                 }
@@ -66,6 +68,7 @@ struct LoginView: View {
             }
             Spacer()
         }
+        .backgroundGradient()
         .alert("User not found or Password Incorrect", isPresented: $showingAlert) {
             Button("OK", role: .cancel) { }
         }

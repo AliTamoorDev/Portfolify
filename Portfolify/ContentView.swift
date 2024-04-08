@@ -21,9 +21,10 @@ struct ContentView: View {
                 VStack {
                     Text("Portfolify")
                         .font(.title)
-                        .fontWeight(.medium)
+                        .fontWeight(.semibold)
                         .fontDesign(.monospaced)
                         .padding(.bottom, 70)
+                        .foregroundColor(.white)
                     //                        .underline()
                 }
                 Spacer()
@@ -64,7 +65,7 @@ struct ContentView: View {
                 }
                 
                 Rectangle()
-                    .frame(width: 140, height: 1)
+                    .frame(width: 140, height: 1.5)
                     .padding(.vertical, 25)
                 
                 VStack(spacing: 15) {
@@ -132,6 +133,9 @@ struct ContentView: View {
                         .environmentObject(signInVM)
                 }
                 Spacer()
+            }
+            .background{
+                Image("bg")
             }
             .navigationBarBackButtonHidden()
             .padding()

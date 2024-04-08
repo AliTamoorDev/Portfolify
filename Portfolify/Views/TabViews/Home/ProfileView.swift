@@ -186,6 +186,7 @@ struct ProfileView: View {
                 }
             }
         }
+        .backgroundGradient()
     }
     
     func setImageData(image: UIImage) {

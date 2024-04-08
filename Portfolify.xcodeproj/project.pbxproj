@@ -23,6 +23,7 @@
 		329DAAC02BBEAAFE009F3B0C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329DAABF2BBEAAFE009F3B0C /* Utilities.swift */; };
 		329DAAC22BBF50CF009F3B0C /* KeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329DAAC12BBF50CF009F3B0C /* KeyChainHelper.swift */; };
 		329DAAC52BBF55C5009F3B0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329DAAC42BBF55C5009F3B0C /* Constants.swift */; };
+		32AB81452BC2CCA600453B55 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB81442BC2CCA600453B55 /* CustomTextField.swift */; };
 		32B7FD722BAEFF140081AE16 /* PortfolifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7FD712BAEFF140081AE16 /* PortfolifyApp.swift */; };
 		32B7FD742BAEFF140081AE16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B7FD732BAEFF140081AE16 /* ContentView.swift */; };
 		32B7FD762BAEFF160081AE16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B7FD752BAEFF160081AE16 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		32C2AE6E2BB8B54E00A1477D /* EditInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C2AE6D2BB8B54E00A1477D /* EditInfoListView.swift */; };
 		32D82AE92BB8C05F00A8693C /* EmptyStateDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D82AE82BB8C05F00A8693C /* EmptyStateDetails.swift */; };
 		32D82AEC2BB8C71800A8693C /* PhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D82AEB2BB8C71800A8693C /* PhotoSelectorView.swift */; };
+		32E1657D2BC4240E0074538D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E1657C2BC4240E0074538D /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,7 @@
 		329DAAC12BBF50CF009F3B0C /* KeyChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainHelper.swift; sourceTree = "<group>"; };
 		329DAAC32BBF54EA009F3B0C /* Portfolify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Portfolify.entitlements; sourceTree = "<group>"; };
 		329DAAC42BBF55C5009F3B0C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		32AB81442BC2CCA600453B55 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		32B7FD6E2BAEFF140081AE16 /* Portfolify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Portfolify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B7FD712BAEFF140081AE16 /* PortfolifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolifyApp.swift; sourceTree = "<group>"; };
 		32B7FD732BAEFF140081AE16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		32C2AE6D2BB8B54E00A1477D /* EditInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoListView.swift; sourceTree = "<group>"; };
 		32D82AE82BB8C05F00A8693C /* EmptyStateDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateDetails.swift; sourceTree = "<group>"; };
 		32D82AEB2BB8C71800A8693C /* PhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorView.swift; sourceTree = "<group>"; };
+		32E1657C2BC4240E0074538D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +154,17 @@
 				329DAABF2BBEAAFE009F3B0C /* Utilities.swift */,
 				329DAAC12BBF50CF009F3B0C /* KeyChainHelper.swift */,
 				329DAAC42BBF55C5009F3B0C /* Constants.swift */,
+				32E1657C2BC4240E0074538D /* Extensions.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		32AB81432BC2CC9100453B55 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				32AB81442BC2CCA600453B55 /* CustomTextField.swift */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 		32B7FD652BAEFF140081AE16 = {
@@ -175,6 +188,7 @@
 			children = (
 				329DAAC32BBF54EA009F3B0C /* Portfolify.entitlements */,
 				329DAABE2BBEAAEB009F3B0C /* Utilities */,
+				32AB81432BC2CC9100453B55 /* Widgets */,
 				32232F922BB7F973006E17EC /* ViewModels */,
 				32232F8E2BB7F876006E17EC /* Models */,
 				32B7FD7F2BAF08C30081AE16 /* Views */,
@@ -302,6 +316,8 @@
 				32D82AE92BB8C05F00A8693C /* EmptyStateDetails.swift in Sources */,
 				32534A9C2BAF23DD00054FB3 /* PortfolioView.swift in Sources */,
 				32B7FD742BAEFF140081AE16 /* ContentView.swift in Sources */,
+				32E1657D2BC4240E0074538D /* Extensions.swift in Sources */,
+				32AB81452BC2CCA600453B55 /* CustomTextField.swift in Sources */,
 				32534A982BAF1F2A00054FB3 /* HomeView.swift in Sources */,
 				32B7FD722BAEFF140081AE16 /* PortfolifyApp.swift in Sources */,
 				32232F902BB7F891006E17EC /* CategoryDataModel.swift in Sources */,

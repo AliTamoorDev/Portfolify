@@ -115,6 +115,7 @@ struct MainView: View {
             
             Spacer()
         }
+        .backgroundGradient()
         .navigationTitle("Home")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {

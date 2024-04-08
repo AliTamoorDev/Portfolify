@@ -22,6 +22,7 @@ struct SignUpView: View {
                     .bold()
                     .font(.largeTitle)
                     .fontDesign(.monospaced)
+                    .foregroundStyle(.white)
                 
                 Spacer()
                 
@@ -33,7 +34,8 @@ struct SignUpView: View {
                     HStack() {
                         Image(systemName: "lock")
                             .padding(.leading)
-                        SecureField("Password", text: $signUpVM.signUpDataObj.password)
+                        
+                        SecureField("", text: $signUpVM.signUpDataObj.password, prompt: Text("Password").foregroundStyle(Color.white.opacity(0.60)))
                             .lineLimit(5)
                             .padding(.vertical)
                     }
@@ -82,8 +84,11 @@ struct SignUpView: View {
                 Spacer()
             }
         }
+        .backgroundGradient()
         .alert("User Already Registered!", isPresented: $showingAlert) {
-            Button("OK", role: .cancel) { }
+            Button("OK", role: .cancel) { 
+                navigateToNextScreen = true
+            }
         }
         
         .alert("SignUp Successful!", isPresented: $showSuccess) {
@@ -92,28 +97,3 @@ struct SignUpView: View {
     }
 }
 
-
-struct CustomTextField: View {
-    @Binding var fieldTxt: String
-    var imageName: String
-    var text: String
-    
-    var body: some View {
-        HStack() {
-            Image(systemName: imageName)
-                .padding(.leading)
-            TextField(text, text: $fieldTxt, axis: .vertical)
-                .lineLimit(5)
-                .padding(.vertical)
-        }
-        .cornerRadius(12)
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color(.label), lineWidth: 1)
-        )
-        .padding(10)
-    }
-}
-#Preview {
-    SignUpView()
-}

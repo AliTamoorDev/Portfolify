@@ -77,6 +77,7 @@ struct AddInfoSheetView: View {
                 .tint(Color.primaryBrand)
             }
         }
+        .backgroundGradient()
     }
 }
 //#Preview {

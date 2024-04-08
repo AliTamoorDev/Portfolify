@@ -38,7 +38,10 @@ struct ContactUs: View {
                 .font(.caption)
                 .fontDesign(.monospaced)
         }
+        .foregroundColor(.white)
+        .frame(maxWidth: .infinity)
         .padding()
+        .backgroundGradient()
     }
 }
 
