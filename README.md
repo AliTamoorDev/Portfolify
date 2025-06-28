@@ -1,1 +1,1 @@
-Readme to be added
+Custom Porfolio/Resume creator iOS app.
